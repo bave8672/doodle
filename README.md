@@ -2,12 +2,14 @@
 
 # Doodle
 
-A typescript wrapper for the 2D HTML canvas.
+(WIP)
+
+A typescript wrapper for the 2D HTML canvas. Defines a global `doodle` object that automatically resizes the canvas, and updates any elements bound to it on each animation frame. Some default elements are supplied, and the user can plug in their own.
 
 ## Features:
 
 - An interface to plug in your own custom canvas objects
-- Implementation of common math and physics funcions.
+- Implementation of basic graphics, math and physics functions.
 
 ## Quickstart
 
