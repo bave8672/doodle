@@ -1,5 +1,3 @@
-/// <reference path="../../../typings/browser.d.ts" />
-
 /// <reference path="graphics/graphics.ts" />
 /// <reference path="physics/physics.ts" />
 /// <reference path="physics/vector.ts" />

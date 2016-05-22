@@ -1,6 +1,5 @@
 /// <reference path="../doodle.d.ts" />
 'use strict';
-var moment = moment || (function () { }); // wtf?
 var doodle;
 (function (doodle) {
     var Mouse = (function () {
@@ -28,7 +27,7 @@ var doodle;
     var DoodleMouseEvent = (function () {
         function DoodleMouseEvent(e) {
             this.position = new doodle.Vector(e.x, e.y);
-            this.time = moment();
+            this.time = new Date();
         }
         return DoodleMouseEvent;
     }());

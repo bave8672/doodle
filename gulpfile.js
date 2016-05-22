@@ -1,14 +1,15 @@
 var gulp   = require('gulp');
-var tsc    = require('gulp-tsc');
+var ts    = require('gulp-typescript');
 var shell  = require('gulp-shell');
 var runseq = require('run-sequence');
 var tslint = require('gulp-tslint');
+var open = require('gulp-open');
 
 var paths = {
   src: 'app/src/**',
   dest: 'app/build/**',
   tscripts : { 
-    src : ['app/src/**/*.ts'],
+    src : ['app/src/**/*.ts', '!**/*.d.ts'],
     dest : 'app/build' 
   },
   html: {
@@ -17,17 +18,19 @@ var paths = {
   },
   css: {
     src: ['app/src/**/*.css'],
-    dest: 'app/build'
-  }
+  dest: 'app/build'
+  },
+  appIndex: 'app/build/index.html'
 };
 
-gulp.task('default', ['lint', 'build', 'watch']);
+gulp.task('default', ['lint', 'build', 'open', 'watch']);
 
 // ** Running ** //
 
-gulp.task('run', shell.task([
-  'node app/build/index.js'
-]));
+gulp.task('open', function() {
+  gulp.src(paths.appIndex)
+    .pipe(open());
+});
 
 // ** Watching ** //
 
@@ -41,7 +44,7 @@ gulp.task('build', ['compile:typescript', 'copy']);
 gulp.task('compile:typescript', function () {
   return gulp
   .src(paths.tscripts.src)
-  .pipe(tsc({
+  .pipe(ts({
     module: "commonjs",
     emitError: false
   }))

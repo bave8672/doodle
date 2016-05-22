@@ -1,8 +1,7 @@
 /// <reference path="../doodle.d.ts" />
 
-'use strict';
 
-var moment = moment || (() => { }); // wtf?
+'use strict';
 
 module doodle {
 
@@ -42,7 +41,9 @@ module doodle {
 
         constructor(e: MouseEvent) {
             this.position = new Vector(e.x, e.y);
-            this.time = moment();
+            this.time = new Date();
         }
     }
 }
+
+

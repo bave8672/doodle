@@ -20,7 +20,6 @@ var doodle;
         };
         Ball.prototype.move = function () {
             doodle.Physics.bounce(this, this.ctx);
-            //this.velocity = this.velocity.times(0.99);
             this.force = this.force.plus(new doodle.Vector(Math.random() - 0.5, Math.random() - 0.5));
             doodle.Physics.gravity(this, this.view.mouse);
             doodle.Physics.drag(this);

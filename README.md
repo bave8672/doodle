@@ -1,43 +1,26 @@
-# algebraic-typescript-awesomeness
+![Demo](screenshots/demo.png)
 
-An awesome MVC typescript project, that displays Hello World.
+# Doodle
 
-## Links
+A typescript wrapper for the 2D HTML canvas.
 
-- Source: 
-- Bugs:
-- Documentation: [http://thirdlink.whatnot/whatever](http://loldamn.com/wp-content/uploads/2014/02/funny-little-fat-puppies-food.jpg)
+## Features:
 
-## Project Setup
+- An interface to plug in your own custom canvas objects
+- Implementation of common math and physics funcions.
 
-This project uses [gulp](http://gulpjs.com/) as its build system. 
+## Quickstart
 
-- Install gulp: `$ npm install -g gulp`
+Install the dependencies and use gulp to fire up ther demo:
 
-1. Install dependencies: `$ npm install`
-2. Build and run: `$ gulp buildrun`
+```
+npm install
+gulp
+```
 
+Head into src/doodle/viewElements/Ball.ts and try tweaking the move() method. Refresh the browser to see how your changes affect the demo.
 
-## Testing
+Try defining your own canvas component - make a class with an update() method following the template of ball.ts - it can do anything. Then in app.ts register your element to the doodle object.
 
-This project usings [mocha](http://visionmedia.github.io/mocha/) for unit testing. Install mocha:
+Have fun!
 
-- `$ npm install -g mocha`
-
-To compile and test run:
-
--  `$ gulp && mocha`
-
-## Troubleshooting & Useful Tools
-
-_Examples of common tasks_
-
-> e.g.
-> 
-> - How to make curl requests while authenticated via oauth.
-> - How to monitor background jobs.
-> - How to run the app through a proxy.
-
-## License
-
-MIT

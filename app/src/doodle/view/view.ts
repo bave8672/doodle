@@ -32,8 +32,10 @@ module doodle {
         update() {
             this.clear();
             for (let index in this.activeElements) {
-                let el = this.activeElements[index];
-                el.update();
+                if (this.activeElements.hasOwnProperty(index)) {
+                    let el = this.activeElements[index];
+                    el.update();
+                }
             }
         }
 
@@ -62,7 +64,7 @@ module doodle {
         }
 
         remove(index: number) {
-            let el = this.activeElements[index]
+            let el = this.activeElements[index];
             delete this.activeElements[index];
             return el;
         }
@@ -70,7 +72,7 @@ module doodle {
         clear() {
             this.ctx.fillStyle = '#000';
             this.ctx.fillRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
-            this.ctx.fillStyle = "#FFF";
+            this.ctx.fillStyle = '#fff';
         }
 
         private generateIndex() {

@@ -1,4 +1,4 @@
-/// <source path="../app.d.ts" />
+/// <source path="../doodle.d.ts" />
 
 module doodle {
 

@@ -1,4 +1,4 @@
-/// <source path="../app.d.ts" />
+/// <source path="../doodle.d.ts" />
 
 interface I2DVector {
     x: number;

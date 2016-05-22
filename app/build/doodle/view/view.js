@@ -19,8 +19,10 @@ var doodle;
         View.prototype.update = function () {
             this.clear();
             for (var index in this.activeElements) {
-                var el = this.activeElements[index];
-                el.update();
+                if (this.activeElements.hasOwnProperty(index)) {
+                    var el = this.activeElements[index];
+                    el.update();
+                }
             }
         };
         View.prototype.start = function () {
@@ -52,7 +54,7 @@ var doodle;
         View.prototype.clear = function () {
             this.ctx.fillStyle = '#000';
             this.ctx.fillRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
-            this.ctx.fillStyle = "#FFF";
+            this.ctx.fillStyle = '#fff';
         };
         View.prototype.generateIndex = function () {
             return this.currentIndex++;

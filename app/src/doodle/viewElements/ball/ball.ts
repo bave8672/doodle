@@ -40,8 +40,7 @@ module doodle {
 
         private move() {
             Physics.bounce(this, this.ctx);
-            //this.velocity = this.velocity.times(0.99);
-            this.force = this.force.plus(new Vector(Math.random() - 0.5, Math.random() - 0.5);
+            this.force = this.force.plus(new Vector(Math.random() - 0.5, Math.random() - 0.5));
             Physics.gravity(this, this.view.mouse);
             Physics.drag(this);
             Physics.applyForces(this);

@@ -33,8 +33,8 @@ var doodle;
         };
         Vector.prototype.average = function (vectors) {
             var s = new Vector();
-            for (var i = 0; i < vectors.length; i++) {
-                s = s.plus(vectors[i]);
+            for (var i_1 = 0; i_1 < vectors.length; i_1++) {
+                s = s.plus(vectors[i_1]);
             }
             return s.times(vectors.length);
         };
